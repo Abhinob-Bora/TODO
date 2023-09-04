@@ -1,4 +1,4 @@
-export const DB_CONNECT =""
+export const DB_CONNECT = process.env.MONGOAPI
 
 export const JWT_TOKEN_SECRET="skkdkjhdkih"
 
