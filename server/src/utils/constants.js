@@ -1,4 +1,4 @@
-export const DB_CONNECT ="mongodb+srv://TODO:mithoi1@todo.cjrgt4r.mongodb.net/todo?retryWrites=true&w=majority"
+export const DB_CONNECT =""
 
 export const JWT_TOKEN_SECRET="skkdkjhdkih"
 
