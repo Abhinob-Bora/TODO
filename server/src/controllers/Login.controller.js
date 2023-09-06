@@ -20,7 +20,7 @@ const Login = async (req,res) =>{
             return res.json(
                 jsonGenerate(
                     StatusCode.UNPROCESSABLE_ENTITY,
-                    "Username or password is incorrect"
+                    "username or password is incorrect"
                     )
                 );
         }
@@ -29,14 +29,14 @@ const Login = async (req,res) =>{
         if(!verified){
             return res.json(jsonGenerate(
                 StatusCode.UNPROCESSABLE_ENTITY,
-                "Username or password is incorrect"
+                "username or password is incorrect"
                 ));
         }
         const token = Jwt.sign({userId:user._id},JWT_TOKEN_SECRET);
         return res.json(jsonGenerate(StatusCode.SUCCESS,"Login Successful",{userId:user._id ,token:token}))
     }
 
-    res.send(jsonGenerate(StatusCode.VALIDATION_ERROR,"validation error",errors.mapped()))
+    res.json(jsonGenerate(StatusCode.VALIDATION_ERROR,"validation error",errors.mapped()))
 }
 
 export default Login;

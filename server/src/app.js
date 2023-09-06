@@ -3,6 +3,7 @@ import apiRoute, { apiProtected } from './routes/api.js';
 import mongoose from 'mongoose';
 import { DB_CONNECT } from './utils/constants.js';
 import AuthMiddleware from './middlewares/AuthMiddleware.js';
+import cors from 'cors'
 
 const app = express();
 
@@ -20,7 +21,7 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-
+app.use(cors());
 app.use(express.json())
 app.use('/api/',apiRoute)
 app.use('/api/',AuthMiddleware, apiProtected)
